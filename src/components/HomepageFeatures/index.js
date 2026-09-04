@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Clinical Data Management',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Comprehensive standard operating procedures covering data collection, 
+        case report forms (CRF), and clinical trial data handling protocols.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Data Quality & Validation',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Standardized validation checks, query resolution workflows, and data integrity 
+        rules to ensure audit-ready clinical datasets.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'EDC & CDM Software Tools',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Technical specifications and user guides for Electronic Data Capture systems, 
+        Medidata Rave, and database locking procedures.
       </>
     ),
   },
