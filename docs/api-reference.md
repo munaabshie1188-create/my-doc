@@ -1,221 +1,87 @@
 ---
-id: api-reference
 title: Clinical Data API Reference
 sidebar_label: API Reference
-description: REST API reference for managing patient records, laboratory test orders, and diagnostic results.
 ---
 
 # Clinical Data REST API
 
-Welcome to the **Clinical Data REST API** reference. This API enables secure retrieval and management of patient demographic records, diagnostic test requests, and laboratory results.
+Welcome to the Clinical Data REST API reference. This API enables secure retrieval and management of patient demographic records, diagnostic test requests, and laboratory results.
+## Base URL
 
-:::info Base URL
-All API requests must be directed to the following base endpoint:
-`https://api.clinicalportal.org/v1`
-:::
-
----
+All API requests must be directed to: https://api.clinicalportal.org/v1
 
 ## Authentication
 
-All API endpoints require a bearer token in the `Authorization` request header:
+All API endpoints require a bearer token in the Authorization request header.
 
-```http
-Authorization: Bearer YOUR_API_TOKEN
-```
+Example: Authorization: Bearer YOUR_API_TOKEN
+## Available Endpoints
 
----
+The following five endpoints are available:
 
-## Endpoints Overview
+- GET /patients — List all registered patients
+- GET /patients/patient-code — Retrieve a specific patient
+- POST /patients — Register a new patient record
+- GET /lab-results/patient-code — Fetch laboratory results
+- POST /lab-orders — Create a new laboratory order
+- ## 1. Get All Patients
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /patients | List all registered patients |
-| GET | /patients/{id} | Retrieve a specific patient |
-| POST | /patients | Register a new patient record |
-| GET | /lab-results/{patient_id} | Fetch laboratory results |
-| POST | /lab-orders | Create a new laboratory order |
+Method: GET
 
----
+Endpoint: /patients
 
-## 1. Get All Patients
+Description: Retrieves a paginated list of registered patient records.
 
-**GET** `/patients`
+Parameters:
+- limit — Maximum records to return. Default is 20.
+- offset — Number of records to skip. Default is 0.
 
-Retrieves a paginated list of registered patient records.
+## 2. Get Patient by Code
 
-### Query Parameters
+Method: GET
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| limit | integer | No | Maximum records to return (Default: 20) |
-| offset | integer | No | Number of records to skip (Default: 0) |
+Endpoint: /patients/patient-code
 
-### Response (200 OK)
+Description: Retrieves clinical and demographic details for a single patient using their unique patient code.
 
-```json
-{
-  "status": "success",
-  "total": 2,
-  "data": [
-    {
-      "patient_id": "P-10029",
-      "full_name": "Amina Ali",
-      "gender": "Female",
-      "date_of_birth": "1991-04-12"
-    },
-    {
-      "patient_id": "P-10030",
-      "full_name": "Hassan Omar",
-      "gender": "Male",
-      "date_of_birth": "1988-09-25"
-    }
-  ]
-}
-```
+Parameters:
+- patient-code — Unique patient reference code. Example: P-10029. Required.
+- ## 3. Register New Patient
 
----
+Method: POST
 
-## 2. Get Patient by ID
+Endpoint: /patients
 
-**GET** `/patients/{id}`
+Description: Creates a new patient profile in the registry.
 
-Retrieves clinical and demographic details for a single patient.
-
-### Path Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| id | string | Yes | Unique patient identifier (e.g., P-10029) |
-
-### Response (200 OK)
-
-```json
-{
-  "status": "success",
-  "data": {
-    "patient_id": "P-10029",
-    "full_name": "Amina Ali",
-    "gender": "Female",
-    "date_of_birth": "1991-04-12",
-    "blood_type": "O+",
-    "contact_number": "+252610000000"
-  }
-}
-```
-
-### Error Response (404 Not Found)
-
-```json
-{
-  "status": "error",
-  "code": "PATIENT_NOT_FOUND",
-  "message": "No patient record found matching ID P-99999"
-}
-```
-
----
-
-## 3. Register New Patient
-
-**POST** `/patients`
-
-Creates a new patient profile in the registry.
-
-### Request Body
-
-```json
-{
-  "full_name": "Farah Jama",
-  "gender": "Male",
-  "date_of_birth": "1995-11-03",
-  "blood_type": "A+",
-  "contact_number": "+252615555555"
-}
-```
-
-### Response (201 Created)
-
-```json
-{
-  "status": "success",
-  "message": "Patient record registered successfully",
-  "data": {
-    "patient_id": "P-10031",
-    "created_at": "2026-09-11T19:45:00Z"
-  }
-}
-```
-
----
+Required fields:
+- full_name — Full name of the patient
+- gender — Patient gender
+- date_of_birth — Date of birth in YYYY-MM-DD format
+- blood_type — Patient blood type
+- contact_number — Patient contact number
 
 ## 4. Get Laboratory Results
 
-**GET** `/lab-results/{patient_id}`
+Method: GET
 
-Retrieves diagnostic laboratory findings for a specific patient.
+Endpoint: /lab-results/patient-code
 
-### Path Parameters
+Description: Retrieves diagnostic laboratory findings for a specific patient using their patient code.
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| patient_id | string | Yes | Patient identifier code |
-
-### Response (200 OK)
-
-```json
-{
-  "status": "success",
-  "patient_id": "P-10029",
-  "results": [
-    {
-      "test_code": "CBC-01",
-      "test_name": "Complete Blood Count",
-      "status": "Completed",
-      "result_value": "Normal",
-      "completed_at": "2026-09-10T11:30:00Z"
-    },
-    {
-      "test_code": "MAL-02",
-      "test_name": "Malaria Rapid Diagnostic Test",
-      "status": "Completed",
-      "result_value": "Negative",
-      "completed_at": "2026-09-10T11:45:00Z"
-    }
-  ]
-}
-```
-
----
+Parameters:
+- patient-code — Unique patient reference code. Required.
 
 ## 5. Submit Laboratory Test Order
 
-**POST** `/lab-orders`
+Method: POST
 
-Submits a new requisition order for diagnostic laboratory processing.
+Endpoint: /lab-orders
 
-### Request Body
+Description: Submits a new requisition order for diagnostic laboratory processing.
 
-```json
-{
-  "patient_id": "P-10029",
-  "ordering_physician": "Dr. Mohamed Said",
-  "tests_requested": ["CBC-01", "MAL-02"],
-  "priority": "Routine"
-}
-```
-
-### Response (201 Created)
-
-```json
-{
-  "status": "success",
-  "message": "Lab order created successfully",
-  "data": {
-    "order_id": "ORD-88201",
-    "patient_id": "P-10029",
-    "status": "Pending Collection",
-    "created_at": "2026-09-11T20:10:00Z"
-  }
-}
-```
+Required fields:
+- patient_code — Reference code of the patient
+- ordering_physician — Name of the requesting physician
+- tests_requested — List of test codes to order
+- priority — Order priority level. Example: Routine or Urgent.
