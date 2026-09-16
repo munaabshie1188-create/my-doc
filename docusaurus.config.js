@@ -1,38 +1,23 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Clinical Data Management',
-  tagline: 'A documentation resource for clinical data professionals',
+  title: 'Clinical Data Management Portal',
+  tagline: 'Technical documentation, REST API references, and diagnostic workflows for clinical data systems.',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
-
-  // Set the production url of your site here
+  // Production URL & GitHub Pages deployment config
   url: 'https://munaabshie1188-create.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/my-doc/',
-
-  // GitHub pages deployment config.
   organizationName: 'munaabshie1188-create',
   projectName: 'my-doc',
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -45,20 +30,11 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          editUrl:
-            'https://github.com/munaabshie1188-create/my-doc/tree/main/',
+          editUrl: 'https://github.com/munaabshie1188-create/my-doc/tree/main/',
         },
         blog: {
           showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/munaabshie1188-create/my-doc/tree/main/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          editUrl: 'https://github.com/munaabshie1188-create/my-doc/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -70,14 +46,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/docusaurus-social-card.jpg',
-      colorMode: {
-        respectPrefersColorScheme: true,
-      },
+      metadata: [
+        {name: 'keywords', content: 'clinical data management, CDM, REST API, healthcare IT, LIMS, clinical trials, data validation, lab informatics'},
+        {name: 'description', content: 'Comprehensive documentation resource covering clinical data management, API integration, and laboratory workflows.'},
+      ],
       navbar: {
-        title: 'CDM Docs',
+        title: 'CDM Documentation',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'CDM Portal Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -99,46 +75,54 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
-                label: 'Documentation',
+                label: 'Getting Started',
                 to: '/docs/intro',
               },
+              {
+                label: 'API Reference',
+                to: '/docs/api-reference',
+              },
+              {
+                label: 'Patient Requisition Tutorial',
+                to: '/docs/patient-registration-tutorial',
+              },
             ],
           },
           {
-            title: 'Community',
+            title: 'Architecture & Rules',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'System Architecture',
+                to: '/docs/system-architecture',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Data Quality & Validation',
+                to: '/docs/data-quality',
               },
               {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'Key CDM Tools',
+                to: '/docs/cdm-tools',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Resources & Code',
             items: [
               {
                 label: 'Blog',
                 to: '/blog',
               },
               {
-                label: 'GitHub',
+                label: 'GitHub Repository',
                 href: 'https://github.com/munaabshie1188-create/my-doc',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Clinical Data Management Portal. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
