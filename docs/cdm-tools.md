@@ -1,6 +1,7 @@
 
 id: cdm-tools
 title: Key Tools in Clinical Data Management
+sidebar_position: 3
 ---
 
 # Key Tools in Clinical Data Management

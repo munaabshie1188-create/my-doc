@@ -2,6 +2,7 @@
 id: system-architecture
 title: System Architecture & Data Flow
 sidebar_label: System Architecture
+sidebar_position: 7
 description: Overview of the Clinical Data Management system architecture, security layers, data pipeline, and API integration.
 ---
 

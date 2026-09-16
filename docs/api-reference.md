@@ -1,6 +1,7 @@
 ---
 title: Clinical Data API Reference
 sidebar_label: API Reference
+sidebar_position: 6
 ---
 
 # Clinical Data REST API

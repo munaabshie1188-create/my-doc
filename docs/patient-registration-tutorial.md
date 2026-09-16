@@ -2,6 +2,7 @@
 id: patient-registration-tutorial
 title: "Tutorial: Registering Patients & Ordering Lab Tests"
 sidebar_label: Workflow Tutorial
+sidebar_position: 5
 description: Step-by-step guide for clinical administrative staff to register new patient profiles and submit laboratory requisitions.
 ---
 

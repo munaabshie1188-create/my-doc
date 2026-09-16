@@ -1,6 +1,7 @@
 
 id: clinical-data-management
 title: Introduction to Clinical Data Management
+sidebar_position: 2
 ---
 
 # Introduction to Clinical Data Management

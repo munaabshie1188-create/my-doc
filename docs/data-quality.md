@@ -2,6 +2,7 @@
 ---
 id: data-quality
 title: Data Quality and Validation
+sidebar_position: 4
 ---
 
 # Data Quality and Validation
