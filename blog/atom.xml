@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://munaabshie1188-create.github.io/my-doc/blog</id>
-    <title>Clinical Data Management Blog</title>
+    <title>Clinical Data Management Portal Blog</title>
     <updated>2026-09-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://munaabshie1188-create.github.io/my-doc/blog"/>
-    <subtitle>Clinical Data Management Blog</subtitle>
+    <subtitle>Clinical Data Management Portal Blog</subtitle>
     <icon>https://munaabshie1188-create.github.io/my-doc/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Ensuring Clinical Data Quality: Validation Rules in Modern Healthcare Systems]]></title>
