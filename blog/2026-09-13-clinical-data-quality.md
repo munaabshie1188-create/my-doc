@@ -1,8 +1,13 @@
 ---
 slug: supabase-healthcare-paas
 title: I Studied Cloud Platforms in Theory. Then Supabase Made It Real.
-authors: [Muna Abdullahi]
+authors:
+  name: Muna Abdullahi
+  title: Biomedical Scientist & Clinical Data Management Trainee
+  url: https://github.com/munaabshie1188-create
+  image_url: https://github.com/munaabshie1188-create.png
 tags: [supabase, healthcare-data, clinical-data-management, paas, technical-writing]
+date: 2026-09-20T10:00
 ---
 
 I am a biomedical scientist transitioning into clinical data management. A few weeks ago I wrote an article explaining how SaaS and PaaS platforms are used in healthcare data. I researched the concepts, explained the differences, and gave real-world examples of how hospitals use cloud platforms to manage patient records and laboratory results.
