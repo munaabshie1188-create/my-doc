@@ -18,7 +18,7 @@ Then I spent several weeks documenting Supabase — an open-source PaaS platform
 
 This is what I learned.
 
-<!-- truncate -->
+
 
 ## What I Thought PaaS Was
 
