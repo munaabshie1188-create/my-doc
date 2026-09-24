@@ -1,6 +1,7 @@
 ---
 title: User & Installation Guide
 sidebar_label: Installation & Setup
+sidebar_position: 2
 ---
 
 # Supabase User & Installation Guide
