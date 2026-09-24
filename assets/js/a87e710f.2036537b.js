@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_doc||=[]).push([[7430],{8116(a){a.exports=JSON.parse('{"tag":{"label":"paas","permalink":"/my-doc/blog/tags/paas","allTagsPath":"/my-doc/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/my-doc/blog/tags/paas","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

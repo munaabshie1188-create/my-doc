@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkmy_docs||=[]).push([[3380],{5329(a){a.exports=JSON.parse('{"tag":{"label":"cdm","permalink":"/my-doc/blog/tags/cdm","allTagsPath":"/my-doc/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/my-doc/blog/tags/cdm","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
